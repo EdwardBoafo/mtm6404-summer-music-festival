@@ -1,0 +1,159 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>React Components Assignment</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 0 0 20px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .soldout {
+      color: red;
+      font-weight: bold;
+    }
+
+    .setlist {
+      margin-top: 10px;
+      padding-left: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel" data-type="module">
+    import React from "https://esm.sh/react@19";
+    import ReactDOM from "https://esm.sh/react-dom@19/client";
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    // =========================
+    // DATA
+    // =========================
+    const bandsData = [
+      {
+        id: "1",
+        bandName: "The Midnight Keys",
+        genre: "Jazz",
+        stage: "Main Stage",
+        isSoldOut: false,
+        songs: ["Autumn Lights", "Blue Night", "City Rain"]
+      },
+      {
+        id: "2",
+        bandName: "Neon Tigers",
+        genre: "Rock",
+        stage: "Stage B",
+        isSoldOut: true,
+        songs: ["Fire Run", "Electric Heart"]
+      },
+      {
+        id: "3",
+        bandName: "Soul Horizon",
+        genre: "R&B",
+        stage: "Main Stage",
+        isSoldOut: false,
+        songs: []
+      }
+    ];
+
+    const siteName = "Summer Music Festival";
+
+    // =========================
+    // TODO 1
+    // Create a BandListItem component
+    // It should receive props
+    // It should display:
+    // - band name
+    // - genre
+    // - stage
+    // - number of songs
+    // =========================
+    const BandListItem = (props) => {
+
+      // TODO: get band from props
+
+      return (
+        <li>
+          {/* TODO: show band name */}
+
+          {/* TODO: show genre */}
+
+          {/* TODO: show stage */}
+
+          {/* TODO: show total songs */}
+
+          {/* TODO: CONDITIONAL
+              If band.isSoldOut is true,
+              show "SOLD OUT"
+          */}
+
+          {/* TODO: CONDITIONAL
+              If songs exist:
+              render a <ul> of songs
+              If no songs:
+              show "No setlist"
+          */}
+
+        </li>
+      );
+    };
+
+
+    // =========================
+    // TODO 2
+    // Create BandList component
+    // It receives bands via props
+    // It should map over bands
+    // =========================
+    const BandList = (props) => {
+
+      return (
+        <ul>
+          {/* TODO: map over props.bands */}
+          {/* render BandListItem */}
+          {/* pass band as prop */}
+          {/* add a key */}
+        </ul>
+      );
+    };
+
+
+    // =========================
+    // TODO 3
+    // App component
+    // =========================
+    function App() {
+      return (
+        <div className="app">
+          <h1>{siteName}</h1>
+
+          {/* TODO: CONDITIONAL RENDERING
+              If there are bands:
+              show BandList
+              otherwise show:
+              "No bands scheduled"
+          */}
+
+        </div>
+      );
+    }
+
+    root.render(<App />);
+  </script>
+</body>
+</html>
